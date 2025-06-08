@@ -1,0 +1,27 @@
+{
+  "name": "foundation",
+  "version": "1.0.0",
+  "description": "Making package for practising",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShubhamSawant48/Namaste-React.git"
+  },
+  "keywords": [],
+  "author": "Shubham Sawant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShubhamSawant48/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/ShubhamSawant48/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
