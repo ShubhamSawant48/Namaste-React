@@ -1,0 +1,15 @@
+{
+  "name": "jsx",
+  "version": "1.0.0",
+  "description": "Practising for JSX",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Shubham Sawant",
+  "license": "ISC",
+  "dependencies": {
+    "parser": "^0.1.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
