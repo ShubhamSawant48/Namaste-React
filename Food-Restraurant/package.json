@@ -1,0 +1,18 @@
+{
+  "name": "food-restraurant",
+  "version": "1.0.0",
+  "description": "Food Delivery Web for practising",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html"
+  },
+  "author": "Shubham Sawant",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
