@@ -1,5 +1,6 @@
 import ResCard from "./ResCard.js";
 import { useEffect } from "react";
+import { SWIIGGYAPI } from "../utils/constants.js";
 
 const Body = () => {
   useEffect( () => {
@@ -7,7 +8,7 @@ const Body = () => {
   } , [] )
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/update");
+    const data = await fetch(SWIIGGYAPI);
 
     const json = data.json();
 
