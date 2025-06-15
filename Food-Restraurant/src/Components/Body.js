@@ -28,7 +28,7 @@ const Body = () => {
     setRestaurantList(temp || []);
   };
 
-  console.log("DATA: ", restaurantList);
+  // console.log("DATA: ", restaurantList);
 
   return (
     <div>
@@ -39,7 +39,7 @@ const Body = () => {
         {restaurantList.map((res) => (
           // console.log(res)
           //  <p>hello</p>
-          <ResCard data={res} />
+          <ResCard data={res} key={res.card.card.info.id} />
         ))}
       </div>
     </div>
