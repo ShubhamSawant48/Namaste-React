@@ -15,6 +15,7 @@ const ResCard = ({ data }) => {
         <h2 style={{ padding: "0px" }}>{resData.areaName}</h2>
         <h3>{resData.area}</h3>
         <h4>{resData.cuisines.join(", ")}</h4>
+        <h4>{resData.avgRating} Stars</h4>
       </div>
     </div>
   );

@@ -26,9 +26,10 @@
 
 .resCard {
     width: 200px;
-    /* height: 90%; */
+    height: 92%;
     margin: 10px 10px 0px 10px;
     padding: 10px 5px 0px 10px;
+    /* flex-direction: column; */
     cursor: pointer;
     background-color: #f0f0f0;
     border:1px solid black;
@@ -64,10 +65,21 @@
 .shimmer-container{
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
+    /* justify-content:safe; */
+    width: 100%;
+    /* height: 200px; */
+    padding:50px 10px 10px 50px;
+    box-sizing: border-box;
 }
 
 .shimmer-card {
     width: 200px;
-    height:250px;
+    height:435px;
+    /* height: 90%; */
+    margin: 10px 10px 0px 10px;
+    padding: 10px 5px 0px 10px;
+    cursor: pointer;
     background-color: #f0f0f0;
+    border:1px solid black;
 }

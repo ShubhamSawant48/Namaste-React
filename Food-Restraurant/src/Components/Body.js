@@ -31,9 +31,11 @@ const Body = () => {
 
   // console.log("DATA: ", restaurantList);
 
-  // if (restaurantList.length === 0) {
-  //   return <Shimmer />;
-  // }
+  if (restaurantList.length === 0) {
+    return <Shimmer />;
+  }
+
+  console.log(Shimmer);
 
   return (
     <div>
