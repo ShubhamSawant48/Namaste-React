@@ -31,13 +31,15 @@ const Body = () => {
 
   // console.log("DATA: ", restaurantList);
 
-  if (restaurantList.length === 0) {
-    return <Shimmer />;
-  }
+  // if (restaurantList.length === 0) {
+  //   return <Shimmer />;
+  // }
 
-  console.log(Shimmer);
+  // console.log(Shimmer);
 
-  return (
+  return restaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div>
       <div className="searAndBtn">
         <div className="search" style={{ padding: "0px" }}>
@@ -50,7 +52,7 @@ const Body = () => {
             onClick={() => {
               let filterRes = restaurantList.filter((res) => {
                 res.card.card.info.avgRating > 4;
-              });
+              })
               console.log(filterRes);
               setRestaurantList(filterRes);
             }}
