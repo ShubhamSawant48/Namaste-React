@@ -35,7 +35,7 @@
 }
 
 .resCard:hover {
-    border:1px solid red;
+    border:2px solid red;
 }
 
 .photos {
@@ -52,4 +52,22 @@
     /* height: 200px; */
     padding:0px 10px 10px 50px;
     box-sizing: border-box;
+}
+
+.searAndBtn {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10px 10px 30px;
+    gap: 20px;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    width: 200px;
+    height:250px;
+    background-color: #f0f0f0;
 }

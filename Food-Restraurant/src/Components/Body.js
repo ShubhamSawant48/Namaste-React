@@ -1,10 +1,11 @@
 import ResCard from "./ResCard.js";
 import { useState, useEffect } from "react";
 import { SWIIGGYAPI } from "../utils/constants.js";
-import { restaurantlist } from "../utils/constants.js";
+import Shimmer from "./Shimmer.js";
 
 const Body = () => {
   let [restaurantList, setRestaurantList] = useState([]);
+  let [filterdRestaurant, setFilterdRestaurant] = useState([]);
 
   // console.log(restaurantlist);
 
@@ -30,10 +31,31 @@ const Body = () => {
 
   // console.log("DATA: ", restaurantList);
 
+  // if (restaurantList.length === 0) {
+  //   return <Shimmer />;
+  // }
+
   return (
     <div>
-      <div className="search" style={{ padding: "10px" }}>
-        Search
+      <div className="searAndBtn">
+        <div className="search" style={{ padding: "0px" }}>
+          <input type="text"></input>
+          <button>Search</button>
+        </div>
+        <div>
+          <button
+            className="topRatedBtn"
+            onClick={() => {
+              let filterRes = restaurantList.filter((res) => {
+                res.card.card.info.avgRating > 4;
+              });
+              console.log(filterRes);
+              setRestaurantList(filterRes);
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
       </div>
       <div className="bodyComponent">
         {restaurantList.map((res) => (
