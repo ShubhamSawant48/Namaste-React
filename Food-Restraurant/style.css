@@ -91,3 +91,7 @@
    margin: 1px 0; /*Or even 2px 0 */
   line-height: 1.2; /* Optional: reduces vertical spacing */
 }
+
+.login {
+    padding:0px 15px;
+}
