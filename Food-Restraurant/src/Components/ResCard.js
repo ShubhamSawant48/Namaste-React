@@ -11,9 +11,9 @@ const ResCard = ({ data }) => {
           src={RESCARDLOGO_URL + resData.cloudinaryImageId}
           className="photos"
         ></img>
-        <h1>{resData.name}</h1>
+        <h2>{resData.name}</h2>
         <h2 style={{ padding: "0px" }}>{resData.areaName}</h2>
-        <h3>{resData.area}</h3>
+        {/* <h3>{resData.area}</h3> */}
         <h4>{resData.cuisines.join(", ")}</h4>
         <h4>{resData.avgRating} Star</h4>
       </div>

@@ -6,7 +6,10 @@ export const RESCARDLOGO_URL =
 
 export const SWIIGGYAPI =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&collection=83631&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
-  
+
+export const RESMENUAPI =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId=";
+
 export const restaurantlist = [
   {
     type: "restaurant",
