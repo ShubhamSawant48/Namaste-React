@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
 
     setResInfo(json?.data?.cards[2]?.card?.card?.info);
 
-    console.log(resInfo);
+    // console.log(resInfo);
 
     // console.log(resInfo);
 
@@ -36,12 +36,7 @@ const RestaurantMenu = () => {
     fetchMenu();
   }, []);
 
-  // const { name } = resInfo?.cards[2]?.card?.card?.info;
-  //   const { menu } =
-  //     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.splice(
-  //       0,
-  //       17
-  //     );
+  // const { name } = resInfo?.data;
 
   return (
     <div className="menu-container">

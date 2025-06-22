@@ -6,12 +6,12 @@ const Header = () => {
   let [loginBtn, setLoginBtn] = useState("Login");
 
   return (
-    <div className="header">
-      <div className="res-logo">
-        <img className="res-logo" src={RESLOGO_URL} />
+    <div className="flex flex-wrap justify-between">
+      <div className="res-logo p-5">
+        <img className="w-25 h-25 border-1 rounded-full" src={RESLOGO_URL} />
       </div>
       <div className="navbar">
-        <ul className="nav-li">
+        <ul className="flex flex-wrap gap-8 p-10 text-2xl">
           <li>
             <Link to="/">Home</Link>
           </li>
