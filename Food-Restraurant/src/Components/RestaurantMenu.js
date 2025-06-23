@@ -39,10 +39,13 @@ const RestaurantMenu = () => {
   // const { name } = resInfo?.data;
 
   return (
-    <div className="menu-container">
-      <div className="menu-content">
+    <div className="text-center">
+      <div className="font-bold text-4xl my-3">
         <h1>{resInfo.name}</h1>
-        <h2>Special Menu:</h2>
+      </div>
+      <div>
+        <h2 className="mt-5 text-2xl">Special Menu:</h2>
+        
       </div>
     </div>
   );

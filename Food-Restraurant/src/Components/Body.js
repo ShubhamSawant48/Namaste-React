@@ -48,7 +48,7 @@ const Body = () => {
       <div className="flex flex-wrap gap-5 mx-60 mb-5 mt-2">
         <div className="search" style={{ padding: "0px" }}>
           <input
-          className="border-1 border-black"
+          className="border-1 border-black bg-gray-200 p-1.5"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
@@ -84,7 +84,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap mx-30 gap-5">
+      <div className="flex flex-wrap mx-35 gap-5">
         {filterdRestaurant.map((res) => (
           // console.log(res)
           //  <p>hello</p>

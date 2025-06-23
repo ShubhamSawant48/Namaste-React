@@ -6,10 +6,10 @@ const ResCard = ({ data }) => {
 
   return (
     <div>
-      <div className="w-50 h-80 mx-3 border-1 border-black p-3 rounded-md hover:border-2 hover:border-red-500">
+      <div className="w-70 h-80 mx-1 border-1 border-black p-3 rounded-md hover:border-2 hover:border-red-500">
         <img
           src={RESCARDLOGO_URL + resData.cloudinaryImageId}
-          className="w-45 h-30"
+          className="w-65 h-40"
         ></img>
         <h2 className="font-bold">{resData.name}</h2>
         <h2 style={{ padding: "0px" }}>{resData.areaName}</h2>
