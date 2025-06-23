@@ -45,14 +45,16 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div>
-      <div className="searAndBtn">
+      <div className="flex flex-wrap gap-5 mx-60 mb-5 mt-2">
         <div className="search" style={{ padding: "0px" }}>
           <input
+          className="border-1 border-black"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           ></input>
           <button
+            className="ml-5 border-1 border-black rounded-md p-1 cursor-pointer hover:bg-amber-100"
             onClick={() => {
               // console.log(searchText);
 
@@ -69,7 +71,7 @@ const Body = () => {
         </div>
         <div>
           <button
-            className="topRatedBtn"
+            className="border-1 border-black rounded-md p-1 cursor-pointer hover:bg-amber-100"
             onClick={() => {
               let filterRes = restaurantList.filter(
                 (res) => res.card.card.info.avgRating > 4.3
@@ -82,7 +84,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="bodyComponent">
+      <div className="flex flex-wrap mx-30 gap-5">
         {filterdRestaurant.map((res) => (
           // console.log(res)
           //  <p>hello</p>
