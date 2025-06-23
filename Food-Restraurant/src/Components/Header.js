@@ -12,17 +12,17 @@ const Header = () => {
       </div>
       <div className="navbar">
         <ul className="flex flex-wrap gap-8 p-15 text-2xl">
-          <li>
+          <li className="hover:text-orange-400">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="hover:text-orange-400">
             <Link to="/About">About Us</Link>
           </li>
-          <li>Contact Us</li>
-          <li>Cart</li>
+          <li className="hover:text-orange-400 cursor-pointer">Contact Us</li>
+          <li className="hover:text-orange-400 cursor-pointer">Cart</li>
 
           <button
-            className="login"
+            className="cursor-pointer hover:text-orange-400"
             onClick={() => {
               loginBtn === "Login"
                 ? setLoginBtn("LogOut")

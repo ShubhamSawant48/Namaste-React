@@ -1,7 +1,7 @@
 import { RESCARDLOGO_URL } from "../utils/constants";
 
 const ResCard = ({ data }) => {
-  const resData = data?.card?.card?.info;
+  const resData = data;
   // console.log(data);
 
   return (
