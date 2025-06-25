@@ -65,7 +65,7 @@ const Body = () => {
         </div>
         <div>
           <button
-            className="border-1 border-black rounded-md p-1 cursor-pointer hover:bg-amber-100"
+            className="border-1 border-black rounded-md p-1 mt-0.5 cursor-pointer hover:bg-amber-100"
             onClick={() => {
               const filterRes = restaurantList.filter(
                 (res) => res.info.avgRating > 4.3

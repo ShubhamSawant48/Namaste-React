@@ -999,10 +999,6 @@ const resDetails = [
       cacheExpiryTime: 240,
       nextFetch: 1,
     },
-    tid: "ea730dc6-7af3-43c2-b22f-83c9bf90ae1d",
-    sid: "l4mc1a7d-f5fa-43ab-954a-d88774194c66",
-    deviceId: "4c704abf-6285-11ec-da72-3f40f8182bca",
-    csrfToken: "TsrSou8T0iHB-RZkPxasu4N1N3OYWbnPt4YhXnT0",
   },
 ];
 
