@@ -1,9 +1,11 @@
 import { RESMENUAPI } from "../utils/constants";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ResSpecial from "./ResSpecial.js";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState({});
+  const [rootInfo, setRootInfo] = useState({});
 
   const { resID } = useParams();
   // console.log(resID);
@@ -17,36 +19,41 @@ const RestaurantMenu = () => {
     console.log(json?.data?.cards[2]?.card?.card?.info);
 
     setResInfo(json?.data?.cards[2]?.card?.card?.info);
-
-    // console.log(resInfo);
-
-    // console.log(resInfo);
-
-    // setTitle(json?.data?.cards[2]?.card?.card?.info?.name);
-    // setMenu(
-    //   json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card?.itemCards?.splice(
-    //     0,
-    //     20
-    //   )
-    // );
-    // console.log(temp2);
+    setRootInfo(json?.data?.cards);
   };
+
+  const {
+    avgRating,
+    totalRatingsString,
+    costForTwoMessage,
+    areaName,
+    locality,
+  } = resInfo;
+  const cuisinesOfRes = resInfo.cuisines;
 
   useEffect(() => {
     fetchMenu();
   }, []);
 
-  // const { name } = resInfo?.data;
-
   return (
-    <div className="text-center">
-      <div className="font-bold text-4xl my-3">
+    <div>
+      <div className="font-bold text-4xl my-3 text-center">
         <h1>{resInfo.name}</h1>
       </div>
-      <div>
-        <h2 className="mt-5 text-2xl">Special Menu:</h2>
-        
+      <div className="relative bg-gray-300 mx-90 w-200 h-45 rounded-3xl">
+        <div className="bg-gray-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-185 h-35 rounded-lg">
+          <h2 className="m-2 font-bold">
+            ⭐{avgRating} ({totalRatingsString}) • {costForTwoMessage}
+          </h2>
+          <h2 className="m-2 font-medium">{cuisinesOfRes?.join(", ")}</h2>
+          <h2 className="m-2 font-medium">
+            Area: {areaName} <br /> Locality: {locality}
+          </h2>
+        </div>
       </div>
+      <h2 className="mt-5 text-2xl text-center">M E N U </h2>
+
+      <ResSpecial data={rootInfo} />
     </div>
   );
 };
