@@ -3,8 +3,8 @@ const ResSpecial = ({ data }) => {
   console.log(data);
   return (
     <div>
-      <div className="w-6/12 h-auto mx-auto bg-gray-100">
-        <div className="bg-gray-100 flex justify-between font-bold p-2 border-b-1 cursor-pointer">
+      <div className="w-6/12 h-auto mx-auto bg-gray-100 m-10">
+        <div className="bg-gray-100 flex justify-between font-bold p-2 cursor-pointer">
           <span>
             {data.card.card.title} ({data.card.card.itemCards.length})
           </span>
