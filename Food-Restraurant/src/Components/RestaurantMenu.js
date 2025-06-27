@@ -16,11 +16,12 @@ const RestaurantMenu = () => {
     );
     const json = await data.json();
 
-    console.log(json?.data?.cards[2]?.card?.card?.info);
+    // console.log(json?.data?.cards[2]?.card?.card?.info);
 
     setResInfo(json?.data?.cards[2]?.card?.card?.info);
     setRootInfo(json?.data?.cards);
   };
+  // console.log(rootInfo)
 
   const {
     avgRating,
@@ -29,7 +30,14 @@ const RestaurantMenu = () => {
     areaName,
     locality,
   } = resInfo;
-  const cuisinesOfRes = resInfo.cuisines;
+
+  const accData = rootInfo[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    (c) =>
+      c.card?.card?.["@type"] ==
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
+
+  console.log(accData);
 
   useEffect(() => {
     fetchMenu();
@@ -45,15 +53,18 @@ const RestaurantMenu = () => {
           <h2 className="m-2 font-bold">
             ⭐{avgRating} ({totalRatingsString}) • {costForTwoMessage}
           </h2>
-          <h2 className="m-2 font-medium">{cuisinesOfRes?.join(", ")}</h2>
+          <h2 className="m-2 font-medium">{resInfo?.cuisines?.join(", ")}</h2>
           <h2 className="m-2 font-medium">
             Area: {areaName} <br /> Locality: {locality}
           </h2>
         </div>
       </div>
-      <h2 className="mt-5 text-2xl text-center">M E N U </h2>
-
-      <ResSpecial data={rootInfo} />
+      <h2 className="mt-5 text-2xl text-center">M E N U</h2>
+      {accData &&
+        accData.map((c) => (
+          // <h1>{c?.card?.card?.title}</h1>
+          <ResSpecial key={c?.card?.card?.title} data={c} />
+        ))}
     </div>
   );
 };
