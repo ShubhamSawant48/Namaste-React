@@ -1,7 +1,7 @@
 import { RESMENUAPI } from "../utils/constants";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ResSpecial from "./ResSpecial.js";
+import ResSpecialHeader from "./ResSpecialHeader.js";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState({});
@@ -33,8 +33,10 @@ const RestaurantMenu = () => {
 
   const accData = rootInfo[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (c) =>
-      c.card?.card?.["@type"] ==
-      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ||
+      c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
   );
 
   // console.log(accData);
@@ -63,8 +65,9 @@ const RestaurantMenu = () => {
       {accData &&
         accData.map((c) => (
           // <h1>{c?.card?.card?.title}</h1>
-          <ResSpecial key={c?.card?.card?.title} data={c} />
+          <ResSpecialHeader key={c?.card?.card?.title} data={c} />
         ))}
+      {console.log(accData)}
     </div>
   );
 };
