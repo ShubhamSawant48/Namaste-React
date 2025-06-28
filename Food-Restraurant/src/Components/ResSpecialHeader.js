@@ -1,13 +1,18 @@
-import { useState } from "react";
 import ResSpecialBody from "./ResSpecialBody";
 
-const ResSpecialHeader = ({ data }) => {
+const ResSpecialHeader = ({ data, setShowIndex, showItems }) => {
   // console.log(data);
-  const [showItems, setShowItems] = useState(true);
+  const handleClick = () => {
+    !setShowIndex();
+  };
+
   return (
     <div>
-      <div className="w-6/12 h-auto mx-auto bg-gray-100 m-10">
-        <div className="bg-gray-100 flex justify-between font-bold p-2 cursor-pointer">
+      <div className="w-6/12 h-auto mx-auto bg-gray-100 m-5 rounded-2xl">
+        <div
+          className="bg-gray-100 flex justify-between font-bold p-2 cursor-pointer"
+          onClick={handleClick}
+        >
           <span>
             {data.card.card.title} (
             {data?.card?.card?.itemCards?.length ||
@@ -16,12 +21,13 @@ const ResSpecialHeader = ({ data }) => {
           </span>
           <span>🔻</span>
         </div>
-        {/* {console.log(data)} */}
-        <ResSpecialBody
-          data={
-            data.card.card.itemCards || data.card.card.categories[0].itemCards
-          }
-        />
+        {showItems && (
+          <ResSpecialBody
+            data={
+              data.card.card.itemCards || data.card.card.categories[0].itemCards
+            }
+          />
+        )}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import ResSpecialHeader from "./ResSpecialHeader.js";
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState({});
   const [rootInfo, setRootInfo] = useState({});
+  const [showIndex, setShowIndex] = useState(null);
 
   const { resID } = useParams();
   // console.log(resID);
@@ -63,11 +64,16 @@ const RestaurantMenu = () => {
       </div>
       <h2 className="mt-5 text-2xl text-center">M E N U</h2>
       {accData &&
-        accData.map((c) => (
+        accData.map((c, index) => (
           // <h1>{c?.card?.card?.title}</h1>
-          <ResSpecialHeader key={c?.card?.card?.title} data={c} />
+          <ResSpecialHeader
+            key={c?.card?.card?.title}
+            data={c}
+            showItems={index == showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
+          />
         ))}
-      {console.log(accData)}
+      {/* {console.log(accData)} */}
     </div>
   );
 };
