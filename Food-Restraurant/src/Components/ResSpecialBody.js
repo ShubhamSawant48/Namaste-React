@@ -1,9 +1,19 @@
+import { addItem } from "../utils/cartSlice";
 import { ACCIMG } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
 
 const ResSpecialBody = ({ data }) => {
   // console.log(data);
 
   // const innerData = data.card.info;
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.items);
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+    console.log(cartItems);
+  };
+
   return (
     <div>
       {data.map((item) => (
@@ -28,7 +38,7 @@ const ResSpecialBody = ({ data }) => {
             <button
               type="button"
               className="cursor-pointer bg-gray-100 shadow-2xl shadow-black font-extrabold text-green-600 ml-15 my-40 px-5 py-2.5 rounded-xl absolute"
-              onClick={() => console.log("Hi")}
+              onClick={() => handleAddItem(item)}
             >
               Add +
             </button>

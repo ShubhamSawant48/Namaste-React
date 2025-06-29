@@ -3,7 +3,7 @@ import ResSpecialBody from "./ResSpecialBody";
 const ResSpecialHeader = ({ data, setShowIndex, showItems }) => {
   // console.log(data);
   const handleClick = () => {
-    !setShowIndex();
+    setShowIndex();
   };
 
   return (
