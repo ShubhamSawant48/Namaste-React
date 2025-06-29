@@ -11,7 +11,6 @@ const ResSpecialBody = ({ data }) => {
 
   const handleAddItem = (item) => {
     dispatch(addItem(item));
-    console.log(cartItems);
   };
 
   return (
@@ -37,7 +36,7 @@ const ResSpecialBody = ({ data }) => {
           <div>
             <button
               type="button"
-              className="cursor-pointer bg-gray-100 shadow-2xl shadow-black font-extrabold text-green-600 ml-15 my-40 px-5 py-2.5 rounded-xl absolute"
+              className="cursor-pointer bg-gray-100 shadow-2xl shadow-black font-extrabold text-green-600 ml-15 my-40 px-5 py-2.5 rounded-xl absolute active:bg-black"
               onClick={() => handleAddItem(item)}
             >
               Add +
